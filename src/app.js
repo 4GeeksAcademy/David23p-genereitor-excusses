@@ -18,22 +18,30 @@ window.onload = function() {
       "during my lunch",
       "while I was praying"
     ];
+    /*function test() {
+      console.log("test");
+    }
+    test(); */
+    function getRandomIndexArray(array) {
+      return Math.floor(Math.random() * array.length);
+    }
+    console.log(getRandomIndexArray(subject));
 
-    let proIndx = Math.floor(Math.random() * pronoun.length);
-    let subjIndx = Math.floor(Math.random() * subject.length);
-    let actionIndex = Math.floor(Math.random() * action.length);
-    let possetionIndex = Math.floor(Math.random() * possetion.length);
-    let whereIndex = Math.floor(Math.random() * where.length);
+    let pronounIndex = Math.floor(Math.random() * pronoun.length);
+    let subjectIndex = getRandomIndexArray(subject);
+    let actionIndex = getRandomIndexArray(action);
+    let possetionIndex = getRandomIndexArray(possetion);
+    let whereIndex = getRandomIndexArray(where);
 
     return (
-      pronoun[proIndx] +
-      "" +
-      subject[subjIndx] +
-      "" +
+      pronoun[pronounIndex] +
+      " " +
+      subject[subjectIndex] +
+      " " +
       action[actionIndex] +
-      "" +
+      " " +
       possetion[possetionIndex] +
-      "" +
+      " " +
       where[whereIndex]
     );
   };
